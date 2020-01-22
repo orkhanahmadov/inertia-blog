@@ -6,7 +6,7 @@ use App\Post;
 use Inertia\Response;
 use Inertia\ResponseFactory;
 
-class HomeController
+class PostsController
 {
     private ResponseFactory $response;
 
@@ -15,10 +15,8 @@ class HomeController
         $this->response = $response;
     }
 
-    public function __invoke(): Response
+    public function show(Post $post): Response
     {
-        $posts = Post::all();
-
-        return $this->response->render('Home', compact('posts'));
+        return $this->response->render('Post/Show', compact('post'));
     }
 }

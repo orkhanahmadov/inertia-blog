@@ -14,7 +14,7 @@
           class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl"
           href="#"
         >
-          Minimal Blog
+          Blog
         </a>
       </div>
 
@@ -38,21 +38,9 @@
         <ul class="list-reset lg:flex justify-end flex-1 items-center">
           <li class="mr-3">
             <a
-              class="inline-block py-2 px-4 text-gray-900 font-bold no-underline"
-              href="#"
-            >Active</a>
-          </li>
-          <li class="mr-3">
-            <a
               class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4"
               href="#"
-            >link</a>
-          </li>
-          <li class="mr-3">
-            <a
-              class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4"
-              href="#"
-            >link</a>
+            >Login</a>
           </li>
         </ul>
       </div>
@@ -63,20 +51,22 @@
 <script>
 export default {
   mounted() {
+    const navContent = this.$refs.navContent;
+
     document.addEventListener('scroll', () => {
       if(window.scrollY > 10){
         this.$refs.header.classList.add("bg-white");
         this.$refs.header.classList.add("shadow");
-        this.$refs.navContent.classList.remove("bg-gray-100");
-        this.$refs.navContent.classList.add("bg-white");
+        navContent.classList.remove("bg-gray-100");
+        navContent.classList.add("bg-white");
 
         return;
       }
 
       this.$refs.header.classList.remove("bg-white");
       this.$refs.header.classList.remove("shadow");
-      this.$refs.navContent.classList.remove("bg-white");
-      this.$refs.navContent.classList.add("bg-gray-100");
+      navContent.classList.remove("bg-white");
+      navContent.classList.add("bg-gray-100");
     })
   }
 }
